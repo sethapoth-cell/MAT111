@@ -201,3 +201,52 @@ svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width:
 @media (prefers-reduced-motion: reduce) {
   * { transition: none !important; animation-duration: 2s !important; }
 }
+
+/* ---------- ระบบสมาชิก ---------- */
+.app.noauth .tabbar { display: none; }
+.app.noauth .view { padding-bottom: 24px; }
+.auth-hero { text-align: center; padding: calc(36px + env(safe-area-inset-top)) 20px 14px; background: linear-gradient(180deg, #cfe9c4, var(--green-bg)); }
+.auth-hero .hero-plant { width: 130px; }
+.auth-form { padding-top: 14px; }
+.auth-tabs .chip { flex: 1; text-align: center; }
+.auth-error { background: var(--red-soft); color: var(--red-ink); border-radius: 12px; padding: 10px 12px; margin: 0 0 12px; font-size: 14px; }
+.acct { background: var(--green-bg); border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; }
+.acct b { display: block; font-size: 16px; }
+.acct span { font-size: 13px; color: var(--muted); word-break: break-all; }
+
+/* ---------- คำอธิบายของ AI ---------- */
+.why { background: #fff; border: 1px dashed #9cc79c; border-radius: 14px; padding: 12px 14px; margin-bottom: 10px; font-size: 14px; }
+.why b { display: block; color: var(--green-dark); margin-bottom: 4px; }
+.issue { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 12px 14px; margin-bottom: 8px; font-size: 14px; }
+.issue b { display: block; margin-bottom: 4px; }
+.issue p { margin: 2px 0; }
+.note-ai { font-size: 12px; color: var(--muted); margin: 10px 2px; }
+
+/* ---------- หน้าปกแบบใหม่ ---------- */
+.hero, .auth-hero {
+  position: relative; overflow: hidden; display: grid; place-items: center;
+  margin: 0;
+  background:
+    radial-gradient(circle at 82% 14%, rgba(255, 244, 190, .9) 0, rgba(255, 244, 190, 0) 38%),
+    radial-gradient(circle at 12% 88%, rgba(255, 255, 255, .45) 0, rgba(255, 255, 255, 0) 40%),
+    linear-gradient(180deg, #bfe4f2 0%, #d3efd0 52%, #eaf5e4 100%);
+}
+.hero { padding: calc(52px + env(safe-area-inset-top)) 12px 30px; }
+.auth-hero { padding: calc(28px + env(safe-area-inset-top)) 20px 34px; }
+.hero::after, .auth-hero::after {
+  content: ""; position: absolute; left: -10%; right: -10%; bottom: -1px; height: 26px;
+  background: var(--bg); border-radius: 50% 50% 0 0 / 100% 100% 0 0;
+}
+.hero .hero-plant { width: min(300px, 82%); height: auto; filter: drop-shadow(0 8px 10px rgba(30, 90, 30, .18)); }
+.auth-hero .hero-plant { width: min(230px, 66%); height: auto; filter: drop-shadow(0 8px 10px rgba(30, 90, 30, .18)); }
+.auth-hero .title, .auth-hero .subtitle { position: relative; z-index: 1; }
+.auth-hero .subtitle { margin-bottom: 4px; }
+.home-body { padding-top: 2px; }
+
+/* ---------- แชต: หมวดคำถามและปุ่มคำตอบหลายแบบ ---------- */
+.quick { flex-wrap: wrap; overflow-x: visible; overflow-y: auto; max-height: 112px; }
+.quick button { min-height: 36px; }
+.quick button.back { background: var(--green-soft); border-color: #8cc58c; color: var(--green-dark); font-weight: 600; }
+.msg-actions { display: flex; flex-wrap: wrap; gap: 6px; align-self: flex-start; max-width: 94%; }
+.msg-actions button { border: 1px solid #8cc58c; background: var(--green-soft); color: var(--green-dark); border-radius: 999px; padding: 6px 12px; font-size: 13px; min-height: 34px; }
+.msg-actions button:active { background: #c9e6c0; }

@@ -11,6 +11,74 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+<!-- ภาพหน้าปก (ใช้ซ้ำทั้งหน้าแรกและหน้าเข้าสู่ระบบ) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false" id="sprite">
+  <defs>
+    <linearGradient id="pcLeafA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#46c94f"/><stop offset="1" stop-color="#0d7a1c"/></linearGradient>
+    <linearGradient id="pcLeafB" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#8fe27a"/><stop offset="1" stop-color="#2b9d38"/></linearGradient>
+    <linearGradient id="pcPot" x1="0" y1="0" x2="1" y2="0"><stop offset="0" stop-color="#ffc255"/><stop offset=".55" stop-color="#f59a22"/><stop offset="1" stop-color="#d9760f"/></linearGradient>
+    <radialGradient id="pcSun" cx=".5" cy=".5" r=".5"><stop offset="0" stop-color="#fff6bd"/><stop offset=".55" stop-color="#ffe27a" stop-opacity=".7"/><stop offset="1" stop-color="#ffe27a" stop-opacity="0"/></radialGradient>
+    <g id="pcLeaf">
+      <path d="M0 0 C-24 -16 -26 -54 0 -84 C26 -54 24 -16 0 0Z"/>
+      <path d="M0 -4 V-74 M0 -26 L-11 -38 M0 -26 L11 -38 M0 -44 L-10 -56 M0 -44 L10 -56" stroke="#fff" stroke-opacity=".38" stroke-width="2" stroke-linecap="round" fill="none"/>
+    </g>
+    <path id="pcStar" d="M0 -7 L2 -2 L7 0 L2 2 L0 7 L-2 2 L-7 0 L-2 -2Z"/>
+    <path id="pcDrop" d="M0 -9 C6 0 9 4 9 8 A9 9 0 0 1 -9 8 C-9 4 -6 0 0 -9Z"/>
+  </defs>
+  <symbol id="plant-art" viewBox="0 0 320 240">
+    <circle cx="262" cy="54" r="58" fill="url(#pcSun)"/>
+    <circle cx="262" cy="54" r="22" fill="#ffd54a"/>
+    <g fill="#fff" opacity=".8">
+      <ellipse cx="52" cy="56" rx="28" ry="10"/><ellipse cx="74" cy="48" rx="18" ry="11"/><ellipse cx="40" cy="49" rx="14" ry="8"/>
+      <ellipse cx="236" cy="24" rx="18" ry="6" opacity=".7"/>
+    </g>
+    <ellipse cx="160" cy="236" rx="128" ry="9" fill="#8fcb7c" opacity=".45"/>
+    <ellipse cx="160" cy="235" rx="64" ry="6" fill="#244d24" opacity=".28"/>
+    <g>
+      <animateTransform attributeName="transform" type="rotate" values="-1.6 160 176;1.6 160 176;-1.6 160 176" keyTimes="0;.5;1" calcMode="spline" keySplines=".45 0 .55 1;.45 0 .55 1" dur="7s" repeatCount="indefinite"/>
+      <g fill="none" stroke="#2a7a2e" stroke-width="5" stroke-linecap="round">
+        <path d="M160 178 C160 140 160 110 160 82"/>
+        <path d="M160 178 C150 152 125 132 100 114"/>
+        <path d="M160 178 C172 152 198 130 224 110"/>
+        <path d="M160 178 C148 162 112 162 88 148"/>
+        <path d="M160 178 C174 162 208 160 234 144"/>
+        <path d="M160 112 C176 96 188 82 198 68" stroke-width="3"/>
+      </g>
+      <use href="#pcLeaf" transform="translate(160 84)" fill="url(#pcLeafA)"/>
+      <use href="#pcLeaf" transform="translate(100 116) rotate(-52) scale(.95)" fill="url(#pcLeafB)"/>
+      <use href="#pcLeaf" transform="translate(224 112) rotate(50) scale(.95)" fill="url(#pcLeafA)"/>
+      <use href="#pcLeaf" transform="translate(88 150) rotate(-82) scale(.8)" fill="url(#pcLeafA)"/>
+      <use href="#pcLeaf" transform="translate(234 146) rotate(80) scale(.8)" fill="url(#pcLeafB)"/>
+      <use href="#pcLeaf" transform="translate(160 132) rotate(-24) scale(.45)" fill="url(#pcLeafB)"/>
+      <use href="#pcLeaf" transform="translate(160 140) rotate(26) scale(.38)" fill="url(#pcLeafB)"/>
+      <g transform="translate(200 62)">
+        <g fill="#ffcf3a">
+          <ellipse rx="4.5" ry="8" cy="-9"/>
+          <ellipse rx="4.5" ry="8" cy="-9" transform="rotate(72)"/>
+          <ellipse rx="4.5" ry="8" cy="-9" transform="rotate(144)"/>
+          <ellipse rx="4.5" ry="8" cy="-9" transform="rotate(216)"/>
+          <ellipse rx="4.5" ry="8" cy="-9" transform="rotate(288)"/>
+        </g>
+        <circle r="5" fill="#f28c00"/>
+      </g>
+    </g>
+    <ellipse cx="160" cy="173" rx="46" ry="6" fill="#5c3a1e"/>
+    <path d="M118 188 H202 L192 228 Q191 234 185 234 H135 Q129 234 128 228Z" fill="url(#pcPot)"/>
+    <path d="M136 192 L141 230" stroke="#fff" stroke-opacity=".35" stroke-width="4" stroke-linecap="round"/>
+    <rect x="108" y="173" width="104" height="17" rx="7" fill="#ffc83d"/>
+    <rect x="108" y="173" width="104" height="5" rx="2.5" fill="#fff" opacity=".35"/>
+    <g fill="#74c7ff" opacity=".9">
+      <use href="#pcDrop" transform="translate(54 120) scale(.8)"/>
+      <use href="#pcDrop" transform="translate(74 144) scale(.55)"/>
+      <use href="#pcDrop" transform="translate(40 150) scale(.45)"/>
+    </g>
+    <g fill="#fff">
+      <use href="#pcStar" transform="translate(112 34)"><animate attributeName="opacity" values=".25;1;.25" dur="3.2s" repeatCount="indefinite"/></use>
+      <use href="#pcStar" transform="translate(286 128) scale(.8)"><animate attributeName="opacity" values="1;.25;1" dur="2.6s" repeatCount="indefinite"/></use>
+      <use href="#pcStar" transform="translate(30 92) scale(.7)"><animate attributeName="opacity" values=".3;1;.3" dur="3.8s" repeatCount="indefinite"/></use>
+    </g>
+  </symbol>
+</svg>
 <div class="app">
 
   <!-- ===== หน้าแรก ===== -->
@@ -23,14 +91,7 @@
     </header>
 
     <div class="hero">
-      <svg class="hero-plant" viewBox="0 0 200 180" aria-hidden="true">
-        <path d="M100 110 C100 80 100 60 100 40" stroke="#2f7d32" stroke-width="5" fill="none" stroke-linecap="round"/>
-        <path d="M100 95 C60 95 35 70 40 35 C75 38 100 60 100 95Z" fill="#1f9d2b"/>
-        <path d="M100 85 C135 85 160 65 156 30 C122 32 100 52 100 85Z" fill="#2fb13a"/>
-        <circle cx="128" cy="30" r="14" fill="#f2b705"/>
-        <path d="M62 112 H138 L130 160 Q129 166 123 166 H77 Q71 166 70 160Z" fill="#f2a516"/>
-        <rect x="56" y="104" width="88" height="16" rx="5" fill="#f7b92e"/>
-      </svg>
+      <svg class="hero-plant" viewBox="0 0 320 240" role="img" aria-label="ต้นไม้ในกระถาง"><use href="#plant-art"/></svg>
     </div>
 
     <div class="home-body">
@@ -102,7 +163,6 @@
         <svg viewBox="0 0 24 24"><path d="M12 3l1.8 4.7L18.5 9.5l-4.7 1.8L12 16l-1.8-4.7L5.5 9.5l4.7-1.8Z"/><path d="M19 15l.8 2.2L22 18l-2.2.8L19 21l-.8-2.2L16 18l2.2-.8Z"/></svg>
         วิเคราะห์ด้วย AI
       </button>
-      <p class="hint" id="mode-hint"></p>
     </div>
   </section>
 
@@ -138,6 +198,31 @@
     </form>
   </section>
 
+  <!-- ===== เข้าสู่ระบบ / สมัครสมาชิก ===== -->
+  <section id="view-auth" class="view">
+    <div class="auth-hero">
+      <svg class="hero-plant" viewBox="0 0 320 240" role="img" aria-label="ต้นไม้ในกระถาง"><use href="#plant-art"/></svg>
+      <h1 class="title">PlantCare AI</h1>
+      <p class="subtitle">เข้าสู่ระบบเพื่อบันทึกต้นไม้และใช้ AI</p>
+    </div>
+    <form class="pad auth-form" id="auth-form" novalidate>
+      <div class="chips auth-tabs" data-group="authmode">
+        <button type="button" class="chip selected" data-mode="login">เข้าสู่ระบบ</button>
+        <button type="button" class="chip" data-mode="register">สมัครสมาชิก</button>
+      </div>
+      <div id="name-wrap" class="hidden">
+        <label class="label" for="auth-name">ชื่อที่แสดง</label>
+        <input class="field" id="auth-name" type="text" maxlength="40" autocomplete="nickname" placeholder="เช่น สมชาย">
+      </div>
+      <label class="label" for="auth-email">อีเมล</label>
+      <input class="field" id="auth-email" type="email" autocomplete="email" placeholder="you@example.com">
+      <label class="label" for="auth-pass">รหัสผ่าน (8 ตัวอักษรขึ้นไป)</label>
+      <input class="field" id="auth-pass" type="password" autocomplete="current-password" placeholder="••••••••">
+      <p class="auth-error hidden" id="auth-error" role="alert"></p>
+      <button class="btn btn-primary" type="submit" id="auth-submit">เข้าสู่ระบบ</button>
+    </form>
+  </section>
+
   <!-- ===== แถบเมนูล่าง ===== -->
   <nav class="tabbar">
     <button data-goto="home" class="tab active" aria-label="หน้าแรก"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8v9a1 1 0 0 1-1 1h-5v-6H9v6H4a1 1 0 0 1-1-1Z"/></svg></button>
@@ -146,20 +231,21 @@
     <button data-goto="chat" class="tab" aria-label="ถามผู้ช่วย"><svg viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12Z"/></svg></button>
   </nav>
 
-  <!-- ===== ตั้งค่า ===== -->
+  <!-- ===== บัญชีและตั้งค่า ===== -->
   <div id="modal" class="modal hidden" role="dialog" aria-modal="true">
     <div class="sheet">
-      <h3>ตั้งค่า AI</h3>
-      <p class="hint left">ใส่ Anthropic API Key เพื่อให้ AI วิเคราะห์รูปจริง คีย์จะถูกเก็บไว้ในเครื่องของคุณเท่านั้น หากไม่ใส่ แอปจะทำงานในโหมดตัวอย่าง</p>
-      <label class="label" for="api-key">API Key</label>
-      <input type="password" id="api-key" class="field" placeholder="sk-ant-..." autocomplete="off">
-      <label class="label" for="api-model">โมเดล</label>
-      <input type="text" id="api-model" class="field" placeholder="claude-sonnet-5-5">
-      <div class="btn-row">
-        <button class="btn btn-outline" id="btn-close-settings">ยกเลิก</button>
-        <button class="btn btn-primary" id="btn-save-settings">บันทึก</button>
+      <h3>บัญชีของฉัน</h3>
+      <div class="acct">
+        <b id="acct-name">-</b>
+        <span id="acct-email">-</span>
       </div>
-      <button class="link-danger" id="btn-clear-data">ลบข้อมูลต้นไม้ทั้งหมด</button>
+      <p class="hint left">ต้นไม้ของคุณถูกบันทึกไว้กับบัญชีนี้ เปิดจากเครื่องไหนก็เห็นเหมือนกัน การวิเคราะห์ด้วย AI ทำงานบนเซิร์ฟเวอร์ ไม่ต้องใส่ API Key</p>
+      <button class="btn btn-outline" id="btn-notify">เปิดการแจ้งเตือนรดน้ำ</button>
+      <div class="btn-row">
+        <button class="btn btn-outline" id="btn-close-settings">ปิด</button>
+        <button class="btn btn-primary" id="btn-logout">ออกจากระบบ</button>
+      </div>
+      <button class="link-danger" id="btn-clear-data">ลบต้นไม้ทั้งหมดในบัญชี</button>
     </div>
   </div>
 
@@ -169,6 +255,7 @@
   </div>
   <div id="toast" class="toast"></div>
 </div>
+<script src="data.js"></script>
 <script src="app.js"></script>
 </body>
 </html>
